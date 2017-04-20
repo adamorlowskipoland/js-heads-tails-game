@@ -1,20 +1,22 @@
+* {
+    box-sizing: border-box;
+}
 body {
     background: #518acc; /* Old browsers */
     background: -moz-linear-gradient(left, #4cb4f6 8%, #007FCC 85%, #0270b2); /* FF3.6-15 */
     background: -webkit-linear-gradient(left, #4cb4f6 8%, #007FCC 85%, #0270b2); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, #4cb4f6 8%, #007FCC 85%, #0270b2); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#518acc', endColorstr='#9ec5e3',GradientType=1 );  /* IE6-9 */
-
 }
 
 .wrapper {
-    position: relative;
+    text-align: center;
 }
 
 .coin {
-    width: 150px;
-    height: 150px;
-    margin: 14rem auto;
+    width: 180px;
+    height: 180px;
+    margin: 8rem auto 4rem;
     border: 5px solid #ffc600;
     border-radius: 50%;
     box-shadow: 
@@ -27,7 +29,7 @@ body {
 
     transition: all 500ms ease-out;
     transform-origin: center;
-    transform: rotateY(180deg);
+    transform: rotateY(89deg);
 
     background: #ffc600; /* Old browsers */
     background: -moz-linear-gradient(bottom left, #ffe175 8%, #ffc600 85%, #c79c00); /* FF3.6-15 */
@@ -40,11 +42,50 @@ body {
 .coin-side {
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-size: 1.3rem;
+    color: #0270b2;
     position: absolute;
     margin: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /*transform: rotateY(180deg);*/
     
+}
+
+.btn-toss {
+    font-size: 1.5rem;
+    letter-spacing: 6px;
+    color: white;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: none;
+    border-radius: 4px;
+    background: #0046CC; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#007FCC, #0046CC); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#007FCC, #0046CC); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#007FCC, #0046CC); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#007FCC, #0046CC); /* Standard syntax */
+}
+.btn-toss:active {
+    box-shadow: 3px 3px 7px grey;
+    color: #4cb4f6;
+}
+
+.score-wrapper {
+    width: 60%;
+    margin: 2rem auto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    display: flex;
+}
+
+.score-heads, .score-tails {
+    flex: 1;
+    padding: 20px;
+}
+
+.score {
+    margin-left: 15px;
 }

@@ -11,4 +11,9 @@ view = {
         operator.evemtListeners();
     }
 }
-view.initDisplay();
+// view.initDisplay();
+
+
+
+
+// coin.style.transform = 'rotateY(1440deg)';
