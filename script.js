@@ -8,6 +8,7 @@ const model = {
 const operator = {
     "headsScore" : 0,
     "tailsScore" : 0,
+    "rotate" : 0,
 
     "setUpScores" : function() {
         model.heads.textContent = this.headsScore;
@@ -34,11 +35,6 @@ const operator = {
             view.clearFlip(model.coin, model.outCome);
             operator.checkFlip();
         });
-        model.coin.addEventListener('transitionend', function() {
-            setTimeout(function() {
-                view.clearFlip(model.coin, model.outCome);
-            },500)
-        });
     }
 }
 
@@ -48,11 +44,12 @@ view = {
         operator.setUpScores();
     },
     "flipCoin" : function(x, y, z) {
-        x.style.transform = "rotateY(1080deg)";
+        operator.rotate += 1080;
+        var rotateString = "rotateY(" + operator.rotate + "deg)";
+        x.style.transform = rotateString;
         y.innerHTML = z;
     },
     "clearFlip" : function(x, y) {
-        x.style.transform = "rotateY(0deg)";
         y.innerHTML = "";
     }
 }
