@@ -17,19 +17,14 @@ const operator = {
     "checkFlip" : function() {
         var outcome = Math.random();
         var outcomeText = "";
-        console.log(outcome);
         if (outcome < 0.5) {
             this.headsScore++;
             outcomeText = "heads";
             view.flipCoin(model.coin, model.outCome, outcomeText);
-
-            console.log('heads score ', this.headsScore);
         } else {
             this.tailsScore++;
             outcomeText = "tailss";
             view.flipCoin(model.coin, model.outCome, outcomeText);
-
-            console.log('tails score ', this.tailsScore);
         }
         this.setUpScores();
     },
@@ -37,6 +32,12 @@ const operator = {
         const btn = document.getElementById('toss');
         btn.addEventListener('click', function() {
             view.clearFlip(model.coin, model.outCome);
+            operator.checkFlip();
+        });
+        model.coin.addEventListener('transitionend', function() {
+            setTimeout(function() {
+                view.clearFlip(model.coin, model.outCome);
+            },500)
         });
     }
 }
@@ -47,13 +48,13 @@ view = {
         operator.setUpScores();
     },
     "flipCoin" : function(x, y, z) {
-        x.style.transform = "rotateY(1440deg)";
+        // x.style.transform = `rotateY(${x.style.transform + "1440deg"}`;
+        x.style.transform = "rotateY(1080deg)";
         y.innerHTML = z;
     },
     "clearFlip" : function(x, y) {
-        x.style.transform = "rotateY(89deg)";
+        x.style.transform = "rotateY(0deg)";
         y.innerHTML = "";
-        operator.checkFlip();
     }
 }
 view.initDisplay();
