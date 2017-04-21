@@ -32,7 +32,7 @@ const operator = {
     "evemtListeners" : function() {
         const btn = document.getElementById('toss');
         btn.addEventListener('click', function() {
-            view.clearFlip(model.coin, model.outCome);
+            view.clearOutcome(model.outCome);
             operator.checkFlip();
         });
     }
@@ -43,14 +43,14 @@ view = {
         operator.evemtListeners();
         operator.setUpScores();
     },
-    "flipCoin" : function(x, y, z) {
+    "flipCoin" : function(coin, outcome, outcomeText) {
         operator.rotate += 1080;
         var rotateString = "rotateY(" + operator.rotate + "deg)";
-        x.style.transform = rotateString;
-        y.innerHTML = z;
+        coin.style.transform = rotateString;
+        outcome.innerHTML = outcomeText;
     },
-    "clearFlip" : function(x, y) {
-        y.innerHTML = "";
+    "clearOutcome" : function(outcomeText) {
+        outcomeText.innerHTML = "";
     }
 }
 view.initDisplay();
