@@ -48,7 +48,6 @@ view = {
         operator.setUpScores();
     },
     "flipCoin" : function(x, y, z) {
-        // x.style.transform = `rotateY(${x.style.transform + "1440deg"}`;
         x.style.transform = "rotateY(1080deg)";
         y.innerHTML = z;
     },
@@ -58,8 +57,3 @@ view = {
     }
 }
 view.initDisplay();
-
-
-
-
-// coin.style.transform = 'rotateY(1440deg)';
